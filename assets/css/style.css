@@ -2,7 +2,9 @@ body {
 	background-color: lightgrey;
 }
 img {
-	margin: 2.5px;
+	margin: 1.5px;
+	border: white outset 1px;
+	border-radius: 5px;
 }
 h5 {
 	font-weight: bold;
@@ -15,11 +17,13 @@ button {
 }
 input {
 	border-radius: 5px;
+	color: black;
 }
 span {
 }
 .searchList {
 	width: 100%;
+	padding: 0px 2px;
 	/*background-color: limegreen;*/
 }
 .gifs {
@@ -28,9 +32,15 @@ span {
 	/*background-color: hotpink;*/
 }
 .searchBox {
+	/*position: fixed;*/
 	float: left;
+	right: 0px;
 	width: 20%;
-	/*background-color: skyblue;*/
+	border: white outset 3px;
+	border-radius: 10px;
+	background-color: teal;
+	color: white;
+	padding: 2px;
 }
 .image {
 	float: left;
@@ -40,8 +50,16 @@ span {
 	position: absolute;
     top: 0px;
     left: 5px;
-    width: 100%;
+    /*width: 100%;*/
     color: white;
     font-size: 25px;
     -webkit-text-stroke: 1px black;
+}
+.gifTitle {
+	background-color: teal;
+	color: white;
+	padding: 2px;
+	margin: 2px;
+	border: white outset 2px;
+	border-radius: 5px;
 }

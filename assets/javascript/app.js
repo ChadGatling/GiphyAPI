@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=6d635480f9444189bb2125786f5b586b";
+    var queryURL = "https://api.giphy.com/v1/gifs/trending?limit=50&api_key=6d635480f9444189bb2125786f5b586b";
     var searchList = [];
 
     $(".gifSearchButton").click(clickGifSearchButton); // When clicked
@@ -9,6 +9,8 @@ $(document).ready(function() {
         method: 'GET'
     }).done(function(response) { // Do something with the data
         // console.log(response.data);
+
+        $(".gifs").html('<h3 class ="gifTitle">Trending</h3>');
 
         for (var i = 0; i < response.data.length; i++) { // Add gifs to html
             var gifURLThumbnail = response.data[i].images.fixed_height_small.url;
@@ -47,7 +49,7 @@ $(document).ready(function() {
         console.log($(this).text());
 
         var searchTerm = $(this).text();
-        var searchURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&api_key=6d635480f9444189bb2125786f5b586b";
+        var searchURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&limit=50&api_key=6d635480f9444189bb2125786f5b586b";
 
         $(".image").empty();
         $.ajax({ // Get the API data
@@ -55,6 +57,8 @@ $(document).ready(function() {
             method: 'GET'
         }).done(function(response) { // Do something with the data
             // console.log(response.data);
+
+            $(".gifs").html('<h3 class ="gifTitle">' + searchTerm + '</h3>');
 
             for (var i = 0; i < response.data.length; i++) { // Add gifs to html
                 var gifURLThumbnail = response.data[i].images.fixed_height_small.url;
