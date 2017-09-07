@@ -20,17 +20,17 @@ span {
 }
 .searchList {
 	width: 100%;
-	background-color: limegreen;
+	/*background-color: limegreen;*/
 }
 .gifs {
 	float: left;
 	width: 80%;
-	background-color: hotpink;
+	/*background-color: hotpink;*/
 }
 .searchBox {
 	float: left;
 	width: 20%;
-	background-color: skyblue;
+	/*background-color: skyblue;*/
 }
 .image {
 	float: left;

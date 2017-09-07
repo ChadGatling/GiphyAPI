@@ -11,12 +11,13 @@ $(document).ready(function() {
         // console.log(response.data);
 
         for (var i = 0; i < response.data.length; i++) { // Add gifs to html
-            var gifURL = response.data[i].images.fixed_height_small.url;
+            var gifURLThumbnail = response.data[i].images.fixed_height_small.url;
+            var gifURL = response.data[i].images.original.url;
             var gifRating = response.data[i].rating.toUpperCase();
 
             $(".gifs").append( // Html to be appended
                 '<div class="image">' +
-                '<img src="' + gifURL + '" />' +
+                    '<a href="' + gifURL + '" target="_blank"><img src="' + gifURLThumbnail + '" /></a>' +
                 '<span class="rating">' + gifRating + '</span>' +
                 '</div>'
             );
@@ -56,12 +57,13 @@ $(document).ready(function() {
             // console.log(response.data);
 
             for (var i = 0; i < response.data.length; i++) { // Add gifs to html
-                var gifURL = response.data[i].images.fixed_height_small.url;
+                var gifURLThumbnail = response.data[i].images.fixed_height_small.url;
+                var gifURL = response.data[i].images.original.url;
                 var gifRating = response.data[i].rating.toUpperCase();
 
                 $(".gifs").append( // Html to be appended
                     '<div class="image">' +
-                    '<img src="' + gifURL + '" />' +
+                    '<a href="' + gifURL + '" target="_blank"><img src="' + gifURLThumbnail + '" /></a>' +
                     '<span class="rating">' + gifRating + '</span>' +
                     '</div>'
                 );
