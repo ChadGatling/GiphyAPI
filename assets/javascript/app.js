@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var queryURL = "https://api.giphy.com/v1/gifs/trending?limit=50&api_key=6d635480f9444189bb2125786f5b586b";
-    var searchList = [];
+    var searchList = ["Cats", "Dogs", "No", "Yes", "Happy", "Mad", "Crying", "Scared"];
 
     $(".small").attr("checked", true);
     var previewSize = $("input[name='size']:checked").attr("value");

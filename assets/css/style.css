@@ -6,9 +6,13 @@ img {
 	border: white outset 1px;
 	border-radius: 5px;
 }
+/*h2 {
+	margin: 0px;
+	padding: 0px 2px;
+}
 h5 {
 	font-weight: bold;
-}
+}*/
 button {
 	background-color: teal;
 	color: white;
@@ -21,6 +25,11 @@ input {
 }
 span {
 }
+/*header {
+	padding: 0px 2px;
+	margin: 0px;
+	color: teal;
+}*/
 /*form {
 	padding: 0px 3px;
 }*/
@@ -59,7 +68,7 @@ a:link {
 	/*background-color: hotpink;*/
 }
 .searchBox {
-	position: fixed;
+	/*position: fixed;*/
 	float: left;
 	right: 0px;
 	width: 20%;
