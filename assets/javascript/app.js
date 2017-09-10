@@ -1,6 +1,7 @@
 $(document).ready(function() {
-    var queryURL = "https://api.giphy.com/v1/gifs/trending?limit=50&api_key=6d635480f9444189bb2125786f5b586b";
+    var queryURL = "https://api.giphy.com/v1/gifs/trending?limit=10&api_key=6d635480f9444189bb2125786f5b586b";
     var searchList = ["Cats", "Dogs", "No", "Yes", "Happy", "Mad", "Crying", "Scared"];
+    var gifReturnCount = $(".numberOfGifs").val();
 
     $(".small").attr("checked", true);
     var previewSize = $("input[name='size']:checked").attr("value");
@@ -14,8 +15,8 @@ $(document).ready(function() {
     }).done(function(response) { // Do something with the data
         // console.log(response.data);
 
-        console.log(previewSize);
         $(".gifs").html('<h3 class ="gifTitle">Trending</h3>'); // title of gifs searched for
+        gifReturnCount = $(".numberOfGifs").val();
         // $(".gifs").html(
         //     '<div class="searchBox">' + ******for this to work you have to put searchbox div inside gifs div and change styling*******
         //         '<form>' +
@@ -61,7 +62,9 @@ $(document).ready(function() {
         searchList.push($(".gifSearch").val()); // add the search term to the array
 
         var searchTerm = $(".gifSearch").val(); // the search term
-        var searchURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&limit=100&api_key=6d635480f9444189bb2125786f5b586b";
+        gifReturnCount = $(".numberOfGifs").val();
+        console.log(gifReturnCount);
+        var searchURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&limit=" + gifReturnCount + "&api_key=6d635480f9444189bb2125786f5b586b";
 
         $(".image").empty();
         $.ajax({ // Get the API data
@@ -72,7 +75,6 @@ $(document).ready(function() {
 
             $(".gifs").html('<h3 class ="gifTitle">' + searchTerm + '</h3>'); // title of the group of gifs
             previewSize = $("input[name='size']:checked").attr("value");
-            console.log(previewSize);
 
             for (var i = 0; i < response.data.length; i++) { // Add gifs to html
                 var gifURLThumbnail = response.data[i].images[previewSize].url;
@@ -109,7 +111,9 @@ $(document).ready(function() {
         // console.log($(this).text());
 
         var searchTerm = $(this).text(); // the search term
-        var searchURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&limit=100&api_key=6d635480f9444189bb2125786f5b586b";
+        gifReturnCount = $(".numberOfGifs").val();
+        console.log(gifReturnCount);
+        var searchURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTerm + "&limit=" + gifReturnCount + "&api_key=6d635480f9444189bb2125786f5b586b";
 
         $(".image").empty();
         $.ajax({ // Get the API data
@@ -120,7 +124,6 @@ $(document).ready(function() {
 
             $(".gifs").html('<h3 class ="gifTitle">' + searchTerm + '</h3>'); // title of the group of gifs
             previewSize = $("input[name='size']:checked").attr("value");
-            console.log(previewSize);
 
             for (var i = 0; i < response.data.length; i++) { // Add gifs to html
                 var gifURLThumbnail = response.data[i].images[previewSize].url;
