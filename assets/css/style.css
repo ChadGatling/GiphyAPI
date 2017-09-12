@@ -99,3 +99,13 @@ a:link {
 	border: white outset 2px;
 	border-radius: 5px;
 }
+.clearButton {
+	float: right;
+    margin: 0px;
+    background-color: red;
+    color: black;
+    border: outset white 2px;
+    border-radius: 5px;
+    padding: 0px 1px 0px 2px;
+    font-size: 21px;
+}
